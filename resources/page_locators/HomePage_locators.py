@@ -7,6 +7,5 @@ class HomePage_locators(object):
 
         LOCATORS = {
 
-            "NEW_CASE" : "xpath=//button[contains(text(),'New case')]",
-            "NEWCASE"
+            "NEW_CASE" : "xpath=//button[contains(text(),'New case')]"
         }
