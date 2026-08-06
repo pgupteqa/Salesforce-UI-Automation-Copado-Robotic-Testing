@@ -17,3 +17,8 @@ Login To salesforce
     JwtAuthenticate    ${consumer_key}      ${persona_username}    ${server_key}
     JwtLogin           /lightning/page/home
     VerifyText         Service
+    
+    #00001002
+    ${query}           Set Variable         Select Id, Subject, Status from Case Where CaseNumber = '00001002'
+    ${records}         QueryRecords         ${query}
+    Log To Console     ${records}[records][0][Id]              
