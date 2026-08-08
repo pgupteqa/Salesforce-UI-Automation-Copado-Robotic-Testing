@@ -1,24 +1,37 @@
 *** Settings ***
-Library    QForce
-Library    QWeb
-Resource    ../resources/keywords/auth.resource
-Resource    ../resources/keywords/common.resource
+Library                     QForce
+Library                     QWeb
+Library                     Collections
+Resource                    ../resources/keywords/auth.resource
+Resource                    ../resources/keywords/common.resource
 
-Suite Setup    OpenBrowser         about:blank     chrome
+Library                     ../resources/variables/test_data.py
+
+Suite Setup                 OpenBrowser                 about:blank                 chrome
 
 
 *** Variables ***
-${orgurl}      https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com
+${orgurl}                   https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com
 
 *** Test Cases ***
 Login To salesforce
-    [Documentation]    This keyword is used to Login to the salesforce Via JWT Login
-    GoTo               ${orgurl}
-    JwtAuthenticate    ${consumer_key}      ${persona_username}    ${server_key}
-    JwtLogin           /lightning/page/home
-    VerifyText         Service
-    
+    [Documentation]         This keyword is used to Login to the salesforce Via JWT Login
+    GoTo                    ${orgurl}
+    JwtAuthenticate         ${consumer_key}             ${persona_username}         ${server_key}
+    JwtLogin                /lightning/page/home
+    VerifyText              Service
+
     #00001002
-    ${query}           Set Variable         Select Id, Subject, Status from Case Where CaseNumber = '00001002'
-    ${records}         QueryRecords         ${query}
-    Log To Console     ${records}[records][0][Id]              
+    ${query}                Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
+    ${records}              QueryRecords                ${query}
+    Log To Console          ${records}[records][0][Id]
+
+    ${data}                 Get Input Data
+    @{substatus_values}=    Get Dictionary Keys         ${data}
+
+    FOR                     ${status_val}               IN                          @{substatus_values}
+        ${expected}=        Get From Dictionary         ${data}                     ${status_val}
+        Log To Console      Sub Status:${status_val}
+        Log To Console      Sub Status:${expected}
+    END
+
