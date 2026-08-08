@@ -1,7 +1,9 @@
+from robot.api.deco import library, keyword
+
 @library
 class Test_Data:
 
-    @Keyword
+    @keyword
     def get_input_data(self):
         data_map = {
 
@@ -9,5 +11,5 @@ class Test_Data:
             "Return To Submitter": "In Progress"
         }
 
-        return data_map.get({})
+        return data_map
 
