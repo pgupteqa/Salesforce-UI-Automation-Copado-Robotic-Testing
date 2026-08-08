@@ -2,10 +2,11 @@
 Library                     QForce
 Library                     QWeb
 Library                     Collections
-Library                     ../resources/variables/test_data.py
+#Library                     ../resources/variables/test_data.py
 Resource                    ../resources/keywords/auth.resource
 Resource                    ../resources/keywords/common.resource
 
+Variables                   ../resources/variables/test_data_exp.py
 
 Suite Setup                 OpenBrowser                 about:blank                 chrome
 
