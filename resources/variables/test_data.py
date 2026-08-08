@@ -1,5 +1,7 @@
+@library
 class Test_Data:
 
+    @Keyword
     def get_input_data(self):
         data_map = {
 
