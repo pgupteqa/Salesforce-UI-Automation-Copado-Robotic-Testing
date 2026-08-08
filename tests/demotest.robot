@@ -2,7 +2,7 @@
 Library                     QForce
 Library                     QWeb
 Library                     Collections
-#Library                     ../resources/variables/test_data.py
+Library                     ../resources/variables/test_data.py
 Resource                    ../resources/keywords/auth.resource
 Resource                    ../resources/keywords/common.resource
 
@@ -34,5 +34,13 @@ Login To salesforce
         ${expected}=        Get From Dictionary         ${data}                     ${status_val}
         Log To Console      Sub Status:${status_val}
         Log To Console      Sub Status:${expected}
+    END
+
+    #Second using python file as dict
+    ${dict_keys}            Get Dictionary Keys         ${CASE_DATA}
+    FOR                     ${key}                      IN                          @{dict_keys}
+        ${value}=           Get From Dictionary         ${CASE_DATA}                ${key}
+        Log To Console      Sub Status: ${key}
+        Log To Console      Expected Value: ${value}
     END
 
