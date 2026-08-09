@@ -12,8 +12,6 @@ Suite Setup                 Setup Browser
 Suite Teardown              End Suite
 
 
-*** Variables ***
-${orgurl}                   https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com
 
 *** Test Cases ***
 Login To salesforce and Launch Service Application
