@@ -8,7 +8,8 @@ Resource                    ../resources/keywords/common.resource
 
 Variables                   ../resources/variables/test_data_exp.py
 
-Suite Setup                 OpenBrowser                 about:blank                 chrome
+Suite Setup                 Setup Browser
+Suite Teardown              End Suite
 
 
 *** Variables ***
