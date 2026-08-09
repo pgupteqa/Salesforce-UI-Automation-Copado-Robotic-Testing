@@ -16,7 +16,7 @@ Suite Teardown              End Suite
 ${orgurl}                   https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com
 
 *** Test Cases ***
-Login To salesforce
+Login To salesforce and Launch Service Application
     [Documentation]         This keyword is used to Login to the salesforce Via JWT Login
     Login To Salesforce     ${persona_username}
     #00001002
