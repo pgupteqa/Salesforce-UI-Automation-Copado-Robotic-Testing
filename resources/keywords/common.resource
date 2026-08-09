@@ -8,7 +8,7 @@ Library    OperatingSystem
 Library    DateTime
 
 *** Variables ***
-${BROWSER}
+${BROWSER}    chrome
 
 *** Keywords ***
 Setup Browser
