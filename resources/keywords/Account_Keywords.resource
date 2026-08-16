@@ -1,0 +1,2 @@
+*** Settings ***
+Resource    common.resource
