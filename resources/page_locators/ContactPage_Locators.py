@@ -11,7 +11,8 @@ class ContactPage_Locators(object):
             "FirstNameInputFieldLocator": "xpath=//input[@name='firstName']",
             "LastNameInputFieldLocator": "xpath=//input[@name='lastName']",
             "ContactSaveButtonLocator": "xpath=//button[@name='SaveEdit']",
-            "RelatedAccountLocator": "xpath=//lightning-base-combobox-item//span[@title='dynamic_value']"
+            "RelatedAccountLocator": "xpath=//lightning-base-combobox-item//span[@title='dynamic_value']",
+            "ContactEmailLocator": "xpath=//input[@inputmode='email']"
 
         }
 
