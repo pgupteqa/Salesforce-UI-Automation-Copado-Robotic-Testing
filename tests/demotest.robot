@@ -2,6 +2,7 @@
 Library                     ../resources/variables/test_data.py
 Resource                    ../resources/keywords/auth.resource
 Resource                    ../resources/keywords/common.resource
+Resource                    ../resources/keywords/Account_Keywords.resource
 
 Variables                   ../resources/variables/test_data_exp.py
 
@@ -14,6 +15,9 @@ Suite Teardown              End Suite
 Login To salesforce and Launch Service Application
     [Documentation]         This keyword is used to Login to the salesforce Via JWT Login
     Login To Salesforce     ${persona_username}
+    Create a New Account using API
+    Verify Account Record
+    
     #00001002
     ${query}                Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
     ${records}              QueryRecords                ${query}
