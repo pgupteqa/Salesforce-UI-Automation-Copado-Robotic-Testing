@@ -18,7 +18,7 @@ Verify Account Record
 
 Create a New Contact Record
     [Documentation]        This Keyword will create the contact record on the related account
-    [Arguments]            ${last_name}=User004            ${accountid}=${account_id}
+    [Arguments]            ${last_name}=User005            ${accountid}=${account_id}
     ${contact_id}          CreateRecord                Contact                     ${last_name}               ${accountid}
     Set Global Variable    ${contact_id}
 
