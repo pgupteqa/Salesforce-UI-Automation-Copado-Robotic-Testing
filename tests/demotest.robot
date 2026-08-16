@@ -17,6 +17,8 @@ Login To salesforce and Launch Service Application
     Login To Salesforce     ${persona_username}
     Create a New Account using API
     Verify Account Record
+    Create a New Contact Record
+    Verify Contact Record
     
     #00001002
     ${query}                Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
