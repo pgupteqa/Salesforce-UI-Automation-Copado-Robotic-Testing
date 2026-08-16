@@ -11,5 +11,5 @@ Create a New Account using API
 
 Verify Account Record
     [Documentation]    This keyword will verify the account record is created
-    GoToRecord         ${account_id}
+    GoToRecord         ${account_id}    url=None
     VerifyText         TestAccount 002
