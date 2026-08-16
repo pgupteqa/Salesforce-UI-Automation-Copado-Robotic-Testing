@@ -5,7 +5,7 @@ Resource                   common.resource
 *** Keywords ***
 Create a New Account using API
     [Documentation]        This keyword will creates an new account using the soql query
-    [Arguments]            ${account_name}=TestAccount 005                         ${industry_name}=Banking
+    [Arguments]            ${account_name}=TestAccount 006                         ${industry_name}=Banking
     ${account_id}          CreateRecord                Account                     Name=${account_name}     Industry=${industry_name}
     Set Global Variable    ${account_id}
 
@@ -14,7 +14,7 @@ Verify Account Record
     Import Variables       ../../resources/variables/env_config.py                 ${crt_environment}
     Set Global Variable    ${sf_org_url}               ${sf_org_url}
     GoToRecord             ${account_id}               url=${sf_org_url}
-    VerifyText             TestAccount 004
+    VerifyText             TestAccount 006
 
 Create a New Contact Record
     [Documentation]        This Keyword will create the contact record on the related account
