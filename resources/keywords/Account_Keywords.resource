@@ -6,7 +6,7 @@ Resource                   common.resource
 Create a New Account using API
     [Documentation]        This keyword will creates an new account using the soql query
     [Arguments]            ${account_name}=TestAccount 005                         ${industry_name}=Banking
-    ${account_id}          CreateRecord                Account                     Name=${account_name}        Industry=${industry_name}
+    ${account_id}          CreateRecord                Account                     Name=${account_name}     Industry=${industry_name}
     Set Global Variable    ${account_id}
 
 Verify Account Record
@@ -18,8 +18,8 @@ Verify Account Record
 
 Create a New Contact Record
     [Documentation]        This Keyword will create the contact record on the related account
-    [Arguments]            ${last_name}=User005            ${accountid}=${account_id}
-    ${contact_id}          CreateRecord                Contact                     ${last_name}               ${accountid}
+    [Arguments]            ${last_name}=User005        ${accountid}=${account_id}
+    ${contact_id}          CreateRecord                Contact                     LastName=${last_name}    AccountId=${accountid}
     Set Global Variable    ${contact_id}
 
 Verify Contact Record
