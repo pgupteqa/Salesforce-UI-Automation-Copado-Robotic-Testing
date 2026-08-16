@@ -11,5 +11,7 @@ Create a New Account using API
 
 Verify Account Record
     [Documentation]    This keyword will verify the account record is created
-    GoToRecord         ${account_id}    url=None
+    Import Variables       ../../resources/variables/env_config.py           ${crt_environment}
+    Set Global Variable    ${sf_base_url}              ${sf_base_url}
+    GoToRecord         ${account_id}    url=${sf_base_url}
     VerifyText         TestAccount 002
