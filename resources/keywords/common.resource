@@ -36,4 +36,4 @@ Get Random String with CurrentDate
     ${current_date_val}       Get Current Date            result_format=%d-%m-%Y
     ${random_string}          Generate Random String      5                           [Letters][Numbers]
     ${random_string_value}    Set Variable                ${random_string}-${current_date_val}
-    Set Suite Variable        ${random_string_value}
+    RETURN                    ${random_string_value}                    
