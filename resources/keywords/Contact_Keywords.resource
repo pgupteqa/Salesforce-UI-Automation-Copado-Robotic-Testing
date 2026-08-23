@@ -10,6 +10,7 @@ Create a New Contact Record
     [Arguments]                 ${lastname}                 ${accountid}=${account_id}
     ${contact_random_string}    Get Random String with Numbers
     Set Suite Variable          ${contact_random_string}
+    Log To Console              ${contact_random_string}
     ${contact_id}               CreateRecord                Contact                     LastName=${lastname}-${contact_random_string}         AccountId=${accountid}
     Set Suite Variable          ${contact_id}
 
