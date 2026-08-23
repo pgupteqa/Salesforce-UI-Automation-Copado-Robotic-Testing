@@ -1,7 +1,6 @@
 def get_variable(self, environment, scenario_variable):
  
-    data_map =
-    {
+    data_map ={
         
         "stg_env.create_account":
         {
