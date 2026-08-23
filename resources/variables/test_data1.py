@@ -1,11 +1,3 @@
-class Test_Data1():
-
-    def __init__(self):
-        pass
-    
-    #def _get_environment(self):
-    #    return env.lower()
-    
     def get_variable(self, environment, scenario_variable):
         """
         Get scenario Variables
