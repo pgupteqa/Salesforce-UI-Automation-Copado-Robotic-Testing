@@ -20,7 +20,7 @@ def get_variable(self, environment, scenario_variable):
             "description": "Customer reports a 404 error when downloading the latest invoice PDF from the client portal.",
             "priority": "High",
             "origin": "Phone"
-        },
+        }
     }
 
     variable_name = f"{environment.lower()}.{scenario_variable}"
