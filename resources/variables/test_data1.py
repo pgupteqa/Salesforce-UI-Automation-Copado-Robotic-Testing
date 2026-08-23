@@ -9,6 +9,7 @@ class Test_Data1(object):
     def get_variable(self, environment, scenario_variable):
         """
         Get scenario Variables
+        
         :return: scenario variables
         """
         global env
@@ -38,10 +39,10 @@ class Test_Data1(object):
 
         'env': env}
 
-        #Read Data map variable
-        variable_name = self._get_environment() + '.' + scenario_variable
+            #Read Data map variable
+            variable_name = self._get_environment() + '.' + scenario_variable
 
-        if data_map.get(variable_name) != None:
-            return data_map.get(variable_name)
-        else:
-            return data_map.get(scenario_variable)
+            if data_map.get(variable_name) != None:
+                return data_map.get(variable_name)
+            else:
+                return data_map.get(scenario_variable)
