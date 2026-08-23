@@ -17,9 +17,23 @@ class Test_Data1():
         
         "stg_env.create_account":
         {
-            "account_name": "TestAccount",
+            "accountname": "TestAccount",
             "Industry": "Banking"
         },
+
+        "stg_env.create_contact":
+        {
+            "firstname": "TestContact",
+            "lastname": "User"
+        },
+
+        "stg_env.create_case":
+        {
+              "subject": "Unable to access billing invoice",
+              "description": "Customer reports a 404 error when downloading the latest invoice PDF from the client portal.",
+              "priority": "High",
+              "origin": "Phone"
+        }
 
 
         'env': env}
