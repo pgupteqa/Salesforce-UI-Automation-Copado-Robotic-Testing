@@ -17,6 +17,6 @@ Verify Contact Record
     [Documentation]             This keyword will verify the account record is created
     [Arguments]                 ${last_name}
     Import Variables            ../../resources/variables/env_config.py                 ${crt_environment}
-    Set Global Variable         ${sf_org_url}               ${sf_org_url}
+    Set Suite Variable          ${sf_org_url}               ${sf_org_url}
     GoToRecord                  ${contact_id}               url=${sf_org_url}
     VerifyText                  ${last_name}-${contact_random_string}
