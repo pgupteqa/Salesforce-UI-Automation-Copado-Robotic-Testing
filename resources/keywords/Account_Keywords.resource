@@ -16,6 +16,6 @@ Verify Account Record
     [Documentation]             This keyword will verify the account record is created
     [Arguments]                 ${accountname}
     Import Variables            ../../resources/variables/env_config.py                 ${crt_environment}
-    Set Global Variable         ${sf_org_url}               ${sf_org_url}
+    Set Suite Variable          ${sf_org_url}               ${sf_org_url}
     GoToRecord                  ${account_id}               url=${sf_org_url}
     VerifyText                  ${accountname} ${account_random_string}
