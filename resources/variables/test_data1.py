@@ -1,4 +1,4 @@
-def get_variable(environment, scenario_variable):
+def get_variables(environment, scenario_variable):
  
     data_map ={
         
