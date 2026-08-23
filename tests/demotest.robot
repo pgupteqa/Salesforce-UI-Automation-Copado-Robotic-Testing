@@ -15,7 +15,7 @@ Suite Teardown                  End Suite
 *** Test Cases ***
 Login To salesforce and Launch Service Application
     [Documentation]             This keyword is used to Login to the salesforce Via JWT Login
-    Import Variables            ../../resources/variables/test_data1.py                 ${crt_environment}     create_account
+    Import Variables            ../resources/variables/test_data1.py                 ${crt_environment}     create_account
     Login To Salesforce         ${persona_username}
     Create a New Account using API                          ${accountname}              ${Industry}
     Verify Account Record       ${accountname}
