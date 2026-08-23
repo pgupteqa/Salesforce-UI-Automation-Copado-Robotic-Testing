@@ -6,7 +6,6 @@ Resource                        common.resource
 Create a New Account using API
     [Documentation]             This keyword will creates an new account using the soql query
     [Arguments]                 ${accountname}              ${Industry}
-    Import Variables            ../../resources/variables/test_data1.py                 ${crt_environment}          create_account
     ${account_random_string}    Get Random String with Numbers
     Set Suite Variable          ${account_random_string}
     ${account_id}               CreateRecord                Account                     Name=${account_name} ${account_random_string}         Industry=${Industry}
