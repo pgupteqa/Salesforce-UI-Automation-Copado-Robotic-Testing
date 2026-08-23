@@ -36,4 +36,10 @@ Get Random String with CurrentDate
     ${current_date_val}       Get Current Date            result_format=%d-%m-%Y
     ${random_string}          Generate Random String      5                           [Letters][Numbers]
     ${random_string_value}    Set Variable                ${random_string}-${current_date_val}
-    RETURN                    ${random_string_value}                    
+    RETURN                    ${random_string_value}
+
+Get Random String with Numbers
+    [Documentation]           Generates the Random String with Current Date
+    ${random_string}          Generate Random String      5                           [Numbers]
+    ${random_string_value}    Set Variable                ${random_string}
+    RETURN                    ${random_string_value}                       
