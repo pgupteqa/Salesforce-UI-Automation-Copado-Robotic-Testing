@@ -7,8 +7,7 @@ Resource                        Account_Keywords.resource
 
 Create a New Contact Record
     [Documentation]             This Keyword will create the contact record on the related account
-    [Arguments]                 ${lastname}                 ${accountid}= ${account_id}
-    Import Variables            ../../resources/variables/test_data1.py                 ${crt_environment}          create_contact
+    [Arguments]                 ${lastname}                 ${accountid}=${account_id}
     ${contact_random_string}    Get Random String with Numbers
     Set Suite Variable          ${contact_random_string}
     ${contact_id}               CreateRecord                Contact                     LastName=${lastname}-${contact_random_string}         AccountId=${accountid}
@@ -16,8 +15,8 @@ Create a New Contact Record
 
 Verify Contact Record
     [Documentation]             This keyword will verify the account record is created
+    [Arguments]                 ${last_name}
     Import Variables            ../../resources/variables/env_config.py                 ${crt_environment}
-    Import Variables            ../../resources/variables/test_data1.py                 ${crt_environment}          create_contact
     Set Global Variable         ${sf_org_url}               ${sf_org_url}
     GoToRecord                  ${contact_id}               url=${sf_org_url}
-    VerifyText                  ${lastname}-${contact_random_string}
+    VerifyText                  ${last_name}-${contact_random_string}
