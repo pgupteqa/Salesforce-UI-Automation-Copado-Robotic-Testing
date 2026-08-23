@@ -19,4 +19,4 @@ Verify Account Record
     Import Variables            ../../resources/variables/env_config.py                 ${crt_environment}
     Set Suite Variable          ${sf_org_url}               ${sf_org_url}
     GoToRecord                  ${account_id}               url=${sf_org_url}
-    VerifyText                  ${accountname} ${account_random_string}
+    VerifyText                  ${accountname}-${account_random_string}
