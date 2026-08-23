@@ -8,7 +8,8 @@ Create a New Account using API
     [Arguments]                 ${accountname}              ${Industry}
     ${account_random_string}    Get Random String with Numbers
     Set Suite Variable          ${account_random_string}
-    ${account_id}               CreateRecord                Account                     Name=${account_name} ${account_random_string}         Industry=${Industry}
+    Log To Console              ${account_random_string}
+    ${account_id}               CreateRecord                Account                     Name=${account_name}-${account_random_string}         Industry=${Industry}
     Set Suite Variable          ${account_id}
 
 
