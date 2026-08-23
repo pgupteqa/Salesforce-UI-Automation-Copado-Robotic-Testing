@@ -18,10 +18,10 @@ Login To salesforce and Launch Service Application
     Import Variables            ../resources/variables/test_data1.py                 ${crt_environment}     create_account
     Import Variables            ../resources/variables/test_data1.py                 ${crt_environment}     create_contact
     Login To Salesforce         ${persona_username}
-    Create a New Account using API                          ${${accountname}}              ${${Industry}}
-    Verify Account Record       ${${accountname}}
-    Create a New Contact Record                             ${${lastname}}
-    Verify Contact Record       ${${lastname}}
+    Create a New Account using API                          ${accountname}              ${Industry}
+    Verify Account Record       ${accountname}
+    Create a New Contact Record                             ${lastname}
+    Verify Contact Record       ${lastname}
 
     #00001002
     ${query}                    Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
