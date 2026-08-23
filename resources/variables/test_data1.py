@@ -25,8 +25,10 @@ def get_variables(environment, scenario_variable):
 
     variable_name = f"{environment.lower()}.{scenario_variable}"
     data = data_map.get(variable_name, {})
+    
+    return data
 
-    return {
-        f"${{{key}}}": value
-        for key, value in data.items()
-    }
+    #return {
+    #    f"${{{key}}}": value
+    #    for key, value in data.items()
+    #}
