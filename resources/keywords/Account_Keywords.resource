@@ -9,8 +9,7 @@ Create a New Account using API
     Import Variables            ../../resources/variables/test_data1.py                 ${crt_environment}       create_account
     ${account_random_string}    Get Random String with Numbers
     ${account_id}               CreateRecord                Account                     Name=${account_name} ${account_random_string}     Industry=${Industry}
-    Set Suite Variable          ${account_id}          
-    RETURN                      ${account_id}
+    Set Suite Variable          ${account_id}
 
 Verify Account Record
     [Documentation]             This keyword will verify the account record is created
