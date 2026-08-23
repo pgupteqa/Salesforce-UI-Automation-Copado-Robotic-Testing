@@ -1,13 +1,13 @@
-dev_env = {'sf_base_url': 'https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com'}
-qa_env = {'sf_base_url': 'https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com'}
+stg_env = {'sf_base_url': 'https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com'}
+uat_env = {'sf_base_url': 'https://orgfarm-0eaed58a8f-dev-ed.develop.my.salesforce.com'}
 prod_env = {'sf_base_url': 'https://login.salesforce.com', 'sf_org_url': 'https://orgfarm-0eaed58a8f-dev-ed.develop.lightning.force.com/'}
 
 def get_variables(env):
-    if env == 'dev_env':
-        return dev_env
-    elif env == 'qa_env':
-        return qa_env
+    if env == 'stg_env':
+        return stg_env
+    elif env == 'uat_env':
+        return uat_env
     elif env == 'prod_env':
         return prod_env
     else:
-        return dev_env
+        return stg_env
