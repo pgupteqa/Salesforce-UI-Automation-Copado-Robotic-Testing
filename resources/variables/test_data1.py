@@ -1,4 +1,4 @@
-class Test_Data1():
+class Test_Data1(object):
 
     def __init__(self):
         pass
