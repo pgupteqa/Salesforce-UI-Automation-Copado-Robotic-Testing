@@ -6,7 +6,7 @@ Resource                        common.resource
 Create a New Account using API
     [Documentation]             This keyword will creates an new account using the soql query
     [Arguments]                 ${accountname}              ${Industry}
-    ${account_random_string}    Get Random String with Numbers
+    ${account_random_string}    Get Random String with CurrentDate
     Set Suite Variable          ${account_random_string}
     Log To Console              ${account_random_string}
     ${account_id}               CreateRecord                Account                     Name=${account_name}-${account_random_string}         Industry=${Industry}
