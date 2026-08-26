@@ -46,3 +46,6 @@ Get Random String with Numbers
     ${random_string_num}      Set Variable                Ref-${random_string}-${random_string_no}
     Set Suite Variable        ${random_string_num}
     RETURN                    ${random_string_num}
+
+    ${val0}                   Get Random String with CurrentDate
+    Log To Console            ${val0}                   
