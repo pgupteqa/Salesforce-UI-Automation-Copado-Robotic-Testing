@@ -33,16 +33,16 @@ End Suite
 
 Get Random String with CurrentDate
     [Documentation]           Generates the Random String with Current Date
-    ${current_date_val}       Get Current Date            result_format=%d-%m-%Y
-    ${random_string}          Generate Random String      4                           [Letters]
+    ${current_date_val}       Get Current Date            result_format=datetime
+    ${random_string}          Generate Random String      4                           [LOWER]
     ${random_string_value}    Set Variable                Ref-${random_string}-${current_date_val}
     Set Suite Variable        ${random_string_value}
     RETURN                    ${random_string_value}
 
 Get Random String with Numbers
     [Documentation]           Generates the Random String with numbers
-    ${random_string_no}       Generate Random String      4                           [Numbers]
-    ${random_string}          Generate Random String      4                           [Letters]
-    ${random_string_num}      Set Variable                Ref-${random_string_no}-${random_string}
+    ${random_string_no}       Generate Random String      3                           [Numbers]
+    ${random_string}          Generate Random String      2                           [LOWER]
+    ${random_string_num}      Set Variable                Ref-${random_string}-${random_string_no}
     Set Suite Variable        ${random_string_num}
     RETURN                    ${random_string_num}
