@@ -41,7 +41,7 @@ Get Random String with CurrentDate
 
 Get Random String with Numbers
     [Documentation]           Generates the Random String with numbers
-    ${random_string_no}       Generate Random String      3                           [Numbers]
+    ${random_string_no}       Generate Random String      3                           [NUMBERS]
     ${random_string}          Generate Random String      2                           [LOWER]
     ${random_string_num}      Set Variable                Ref-${random_string}-${random_string_no}
     Set Suite Variable        ${random_string_num}
