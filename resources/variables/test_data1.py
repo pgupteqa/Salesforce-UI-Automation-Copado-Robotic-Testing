@@ -21,7 +21,7 @@ def get_variables(environment, scenario_variable):
             "subject": "Unable to access billing invoice",
             "description": "Customer reports a 404 error when downloading the latest invoice PDF from the client portal.",
             "priority": "High",
-            "origin": "Web"
+            "caseorigin": "Web"
         }
     }
 
