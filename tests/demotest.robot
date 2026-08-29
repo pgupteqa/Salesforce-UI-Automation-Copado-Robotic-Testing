@@ -6,12 +6,8 @@ Resource                        ../resources/keywords/Account_Keywords.resource
 Resource                        ../resources/keywords/Contact_Keywords.resource
 Resource                        ../resources/keywords/Case_Keywords.resource
 
-Variables                       ../resources/variables/test_data_exp.py
-
 Suite Setup                     Setup Browser
 Suite Teardown                  End Suite
-
-
 
 *** Test Cases ***
 Verify the User Can Create a New Account and Contact Record
