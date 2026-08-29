@@ -36,20 +36,3 @@ Validate a Case Record Using SOQL Query
     ${query}                    Set Variable                Select Fields(ALL) from Case Where CaseNumber = '${casenumber}'
     ${records}                  QueryRecords                ${query}
     Log To Console              ${records}[records][0][@{casefields}]
-
-    ${data}                     Get Input Data
-    @{substatus_values}=        Get Dictionary Keys         ${data}
-
-    FOR                         ${status_val}               IN                          @{substatus_values}
-        ${expected}=            Get From Dictionary         ${data}                     ${status_val}
-        Log To Console          Sub Status:${status_val}
-        Log To Console          Sub Status:${expected}
-    END
-
-    #Second using python file as dict
-    ${dict_keys}                Get Dictionary Keys         ${CASE_DATA}
-    FOR                         ${key}                      IN                          @{dict_keys}
-        ${value}=               Get From Dictionary         ${CASE_DATA}                ${key}
-        Log To Console          Sub Status: ${key}
-        Log To Console          Expected Value: ${value}
-    END
