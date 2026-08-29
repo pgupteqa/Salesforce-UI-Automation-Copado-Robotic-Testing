@@ -7,7 +7,9 @@ class CasePage_Locators(object):
 
         LOCATORS = {
 
-            ""
+            "CASE_SUBJECT": "xpath=//input[@name='Subject']",
+            "CASE_DESCRIPTION": "xpath=//input[@name='Description']",
+            "CASE_SAVE_BUTTON": "xpath=//button[@name='SaveEdit']"
 
         }
 
