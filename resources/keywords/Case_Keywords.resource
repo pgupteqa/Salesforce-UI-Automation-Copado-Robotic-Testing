@@ -22,10 +22,10 @@ Create a New Case Record
 
 Validate the Case using the generated CaseNumber
     [Documentation]       This keyword will validate the case using the case numbers
-    [Arguments]           ${sforgurl}
-    GlobalSearch          ${sforgurl}                 ${newcasenumber}        Case
-    ${casenumberval}      Replace String              ${CASESEARCH_RESULT}    dynamic_value    ${newcasenumber}
+    [Arguments]           ${sforgurl}    ${casenumber}
+    GlobalSearch          ${sforgurl}                 ${casenumber}        Case
+    ${casenumberval}      Replace String              ${CASESEARCH_RESULT}    dynamic_value    ${casenumber}
     VerifyElement         ${casenumberval}
     ClickElement          ${casenumberval}
-    VerifyText            ${newcasenumber}
+    VerifyText            ${casenumber}
 
