@@ -1,11 +1,11 @@
 *** Settings ***
 Resource                  common.resource
+Resource    ../page_locators/CasePageLocators.resource
 
 *** Keywords ***
 Create a New Case Record
     [Documentation]       This keyword will creates an new case record
     [Arguments]           ${subject}                  ${description}          ${account}       ${contact}          ${priority}    ${caseorigin}
-    Import Variables      ../page_locators/ContactPage_Locators.py
     ClickText             Case
     ClickElement          ${CASE_NEW_BUTTON}
     ComboBox              Search Contacts...          ${contact}
