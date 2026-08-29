@@ -32,7 +32,7 @@ Validate the Case using the generated CaseNumber
 
 Validate a Case Record Using SOQL Query
     [Documentation]             This keyword will get the Case record with all fields
-    [Arguments]                 ${casenumber}    @{casefields}
+    [Arguments]                 ${casenumber}    ${casefields}
     ${query}                    Set Variable                Select Fields(ALL) from Case Where CaseNumber = '${casenumber}'
     ${records}                  QueryRecords                ${query}
-    Log To Console              ${records}[records][0][@{casefields}]
+    Log To Console              ${records}[records][0][${casefields}]
