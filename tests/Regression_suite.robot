@@ -12,7 +12,7 @@ Suite Teardown                  End Suite
 *** Test Cases ***
 Verify the User Can Create a New Account and Contact Record
     [Documentation]             This keyword is used to Login to the salesforce Via JWT Login
-    [Tags]                      regression    smoke    
+    [Tags]                      regression    smoke        
     Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_account
     Login To Salesforce         ${persona_username}
     Create a New Account using API                          ${accountname}              ${Industry}
