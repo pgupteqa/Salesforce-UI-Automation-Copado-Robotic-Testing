@@ -29,7 +29,11 @@ Verify a New Case Creation from an Agent
     Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_case
     Login To Salesforce         ${persona_username}
     Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
-
+    Validate the Case using the generated CaseNumber        ${sfbaseurl}                ${newcasenumber}
+    
+    
+    
+    
     #00001002
     ${query}                    Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
     ${records}                  QueryRecords                ${query}
