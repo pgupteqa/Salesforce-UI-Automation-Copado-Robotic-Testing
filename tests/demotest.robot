@@ -4,6 +4,7 @@ Resource                        ../resources/keywords/auth.resource
 Resource                        ../resources/keywords/common.resource
 Resource                        ../resources/keywords/Account_Keywords.resource
 Resource                        ../resources/keywords/Contact_Keywords.resource
+Resource                        ../resources/keywords/Case_Keywords.resource
 
 Variables                       ../resources/variables/test_data_exp.py
 
@@ -13,15 +14,21 @@ Suite Teardown                  End Suite
 
 
 *** Test Cases ***
-Login To salesforce and Launch Service Application
+Verify the User can Create a New Case With Required Fields
     [Documentation]             This keyword is used to Login to the salesforce Via JWT Login
-    Import Variables            ../resources/variables/test_data1.py                 ${crt_environment}     create_account
+    Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_account
     Login To Salesforce         ${persona_username}
     Create a New Account using API                          ${accountname}              ${Industry}
     Verify Account Record       ${accountname}
-    Import Variables            ../resources/variables/test_data1.py                 ${crt_environment}     create_contact
+    Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_contact
     Create a New Contact Record                             ${lastname}
     Verify Contact Record       ${lastname}
+
+Verify a New Case Creation from an Agent
+    [Documentation]             Agent user can create a new case with required Fields
+    Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_case
+    Login To Salesforce         ${persona_username}
+    Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
 
     #00001002
     ${query}                    Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
