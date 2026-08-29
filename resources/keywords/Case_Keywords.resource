@@ -1,6 +1,6 @@
 *** Settings ***
 Resource                  common.resource
-Resource    ../page_locators/CasePageLocators.resource
+Resource        ../page_locators/CasePageLocators.resource
 
 *** Keywords ***
 Create a New Case Record
