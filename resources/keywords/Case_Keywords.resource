@@ -33,13 +33,16 @@ Validate the Case using the generated CaseNumber
 Validate a Case Record Using SOQL Query
     [Documentation]             This keyword will get the Case record with all fields
     [Arguments]                 ${casenumber}               @{casefields}
-    ${expected_values}          Get Variables               ${crt_environment}          create_case
+    #${expected_values}         Get Variables               ${crt_environment}          create_case
     ${query}                    Set Variable                Select Fields(ALL), Account.Name, Contact.Name from Case Where CaseNumber = '${casenumber}' Limit 100
     ${records}                  QueryRecords                ${query}
     Should Not Be Empty         ${records}[records]         msg=Case '${newcasenumber}' was not found
     ${case_record}              Set Variable                ${records}[records][0]
     FOR                         ${field}                    IN                          @{casefields}
-        ${expected_value}=      Get From Dictionary         ${expected_values}          ${field}
+        ${variable_name}=       Set Variable                \${${field}}
+        ${expected_value}=      Get Variable Value          ${variable_name}
+        #${expected_value}=     Get From Dictionary         ${expected_values}          ${field}
+        Should Not Be Equal     ${expected_value}           ${None}
         ${field_map}            Create Dictionary           subject=Subject             description=Description     priority=Priority    caseorigin=Origin
         ${sf_field}             Get From Dictionary         ${field_map}                ${field}                    default=${field}
         ${actual_value}         Set Variable                ${case_record}[${sf_field}]
