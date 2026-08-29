@@ -13,7 +13,8 @@ Create a New Case Record
     PickList              Case Origin                 ${caseorigin}
     PickList              Priority                    ${priority}
     ScrollTo              Additional Information
-    TypeText              ${CASE_SUBJECT}             ${subject}
+    ${random_num}         Get Random String with Numbers
+    TypeText              ${CASE_SUBJECT}             ${subject}-Ref-{random_num}
     TypeText              Description                 ${description}
     ClickElement          ${CASE_SAVE_BUTTON}
     #Get casenumber into a variable once it is created
