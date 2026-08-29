@@ -14,7 +14,7 @@ Suite Teardown                  End Suite
 
 
 *** Test Cases ***
-Verify the User can Create a New Case With Required Fields
+Verify the User Can Create a New Account and Contact Record
     [Documentation]             This keyword is used to Login to the salesforce Via JWT Login
     Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_account
     Login To Salesforce         ${persona_username}
@@ -24,35 +24,10 @@ Verify the User can Create a New Case With Required Fields
     Create a New Contact Record                             ${lastname}
     Verify Contact Record       ${lastname}
 
-Verify a New Case Creation from an Agent
+Verify a New Case Creation on a Contact
     [Documentation]             Agent user can create a new case with required Fields
     Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_case
     Login To Salesforce         ${persona_username}
     Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
     Validate the Case using the generated CaseNumber        ${sfbaseurl}                ${newcasenumber}
-    
-    
-    
-    
-    #00001002
-    ${query}                    Set Variable                Select Id, Subject, Status from Case Where CaseNumber = '00001002'
-    ${records}                  QueryRecords                ${query}
-    Log To Console              ${records}[records][0][Id]
-
-    ${data}                     Get Input Data
-    @{substatus_values}=        Get Dictionary Keys         ${data}
-
-    FOR                         ${status_val}               IN                          @{substatus_values}
-        ${expected}=            Get From Dictionary         ${data}                     ${status_val}
-        Log To Console          Sub Status:${status_val}
-        Log To Console          Sub Status:${expected}
-    END
-
-    #Second using python file as dict
-    ${dict_keys}                Get Dictionary Keys         ${CASE_DATA}
-    FOR                         ${key}                      IN                          @{dict_keys}
-        ${value}=               Get From Dictionary         ${CASE_DATA}                ${key}
-        Log To Console          Sub Status: ${key}
-        Log To Console          Expected Value: ${value}
-    END
 
