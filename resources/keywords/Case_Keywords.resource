@@ -33,7 +33,7 @@ Validate the Case using the generated CaseNumber
 Validate a Case Record Using SOQL Query
     [Documentation]             This keyword will get the Case record with all fields
     [Arguments]                 ${casenumber}               @{casefields}
-    ${query}                    Set Variable                Select Fields(ALL), Account.Name, Contact.Name from Case Where CaseNumber = '${casenumber}' Limit 100
+    ${query}                    Set Variable                Select Fields(ALL), Account.Name, Contact.Name from Case Where CaseNumber = '${casenumber}' Limit 1
     ${records}                  QueryRecords                ${query}
     Should Not Be Empty         ${records}[records]         msg=Case '${newcasenumber}' was not found
     ${case_record}              Set Variable                ${records}[records][0]
