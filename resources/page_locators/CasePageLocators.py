@@ -1,4 +1,4 @@
-def get_variable(self):
+def get_variable():
 
     LOCATORS = {
 
