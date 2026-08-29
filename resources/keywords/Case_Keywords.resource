@@ -1,5 +1,5 @@
 *** Settings ***
-Library                   ../page_locators/ContactPage_Locators.py
+Library               ../page_locators/ContactPage_Locators.py
 Resource                  common.resource
 
 *** Keywords ***
