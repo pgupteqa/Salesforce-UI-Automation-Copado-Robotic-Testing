@@ -1,19 +1,14 @@
-class CasePage_Locators(object):
+def get_variable(self):
 
-    def __init__(self):
-        pass
+    LOCATORS = {
 
-    def get_variable(self):
+        "CASE_NEW_BUTTON": "xpath=//a[@title='New']",
+        "CASE_SUBJECT": "xpath=//input[@name='Subject']",
+        "CASE_DESCRIPTION": "xpath=//input[@name='Description']",
+        "CASE_SAVE_BUTTON": "xpath=//button[@name='SaveEdit']",
+        "CASENUMBER_TOAST": "xpath=//div//span[contains(@class,'toastMessage')]/a",
+        "CASESEARCH_RESULT": "xpath=//th//a[contains(text(),'dynamic_value')]"
 
-        LOCATORS = {
+    }
 
-            "CASE_NEW_BUTTON": "xpath=//a[@title='New']",
-            "CASE_SUBJECT": "xpath=//input[@name='Subject']",
-            "CASE_DESCRIPTION": "xpath=//input[@name='Description']",
-            "CASE_SAVE_BUTTON": "xpath=//button[@name='SaveEdit']",
-            "CASENUMBER_TOAST": "xpath=//div//span[contains(@class,'toastMessage')]/a",
-            "CASESEARCH_RESULT": "xpath=//th//a[contains(text(),'dynamic_value')]"
-
-        }
-
-        return LOCATORS
+    return LOCATORS
