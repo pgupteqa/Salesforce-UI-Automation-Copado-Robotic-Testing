@@ -14,7 +14,7 @@ Create a New Case Record
     PickList              Priority                    ${priority}
     ScrollTo              Additional Information
     TypeText              ${CASE_SUBJECT}             ${subject}
-    TypeText              ${CASE_DESCRIPTION}         ${description}
+    TypeText              Description                 ${description}
     ClickElement          ${CASE_SAVE_BUTTON}
     #Get casenumber into a variable once it is created
     ${newcasenumber}      GetText                     ${CASENUMBER_TOAST}
