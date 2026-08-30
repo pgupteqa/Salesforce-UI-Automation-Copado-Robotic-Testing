@@ -29,5 +29,5 @@ Verify a New Case Creation on a Contact
     #Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
     Create a New Case Record    ${CaseTable.Subject}                 ${CaseTable.Description}             ${account}             ${contact}    ${CaseTable.Priority}    ${CaseTable.CaseOrigin}
     Validate the Case using the generated CaseNumber        ${sfbaseurl}                ${newcasenumber}
-    Validate a Case Record Using SOQL Query                 ${newcasenumber}            ${CaseTable.Description}            ${CaseTable.CaseOrigin}                      
+    Validate a Case Record Using SOQL Query                 ${newcasenumber}            description       priority                      
     CloseBrowser
