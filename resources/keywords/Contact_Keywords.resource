@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                         ../page_locators/ContactPageLocators.resource
+Resource                         ../page_locators/ContactPage_Locators.resource
 Resource                        common.resource
 Resource                        Account_Keywords.resource
 
