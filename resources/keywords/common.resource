@@ -6,6 +6,7 @@ Library                       String
 Library                       OperatingSystem
 #Library                      SeleniumLibrary
 Library                       DateTime
+Resource                      auth.resource
 
 *** Variables ***
 ${BROWSER}                    ${browser}
@@ -46,3 +47,8 @@ Get Random String with Numbers
     ${random_string_num}      Set Variable                Ref-${random_string}-${random_string_no}
     Set Suite Variable        ${random_string_num}
     RETURN                    ${random_string_num}                 
+
+
+Login to Salesforce Org as AdminUser
+    [Documentation]    This keyword will login to the Sf org as admin user using the JwtAuthenticate
+    Login To Salesforce    ${persona_username}    
