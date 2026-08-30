@@ -9,7 +9,7 @@ Suite Setup                     Setup Browser
 Suite Teardown                  End Suite
 
 Test Setup                      Login to Salesforce Org as AdminUser
-Test Teardown                   CloseBrowser
+Test Teardown                   CloseWindow
 
 *** Test Cases ***
 Verify the User Can Create a New Account and Contact Record
