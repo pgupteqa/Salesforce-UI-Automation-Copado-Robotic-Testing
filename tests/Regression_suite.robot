@@ -5,11 +5,9 @@ Resource                        ../resources/keywords/Account_Keywords.resource
 Resource                        ../resources/keywords/Contact_Keywords.resource
 Resource                        ../resources/keywords/Case_Keywords.resource
 
-Suite Setup                     Setup Browser
+Suite Setup                     Run Keywords    Setup Browser    Login to Salesforce Org as AdminUser
 Suite Teardown                  End Suite
 
-Test Setup                      Login to Salesforce Org as AdminUser
-Test Teardown                   CloseWindow
 
 *** Test Cases ***
 Verify the User Can Create a New Account and Contact Record
