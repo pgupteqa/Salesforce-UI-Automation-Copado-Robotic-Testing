@@ -26,6 +26,8 @@ Verify a New Case Creation on a Contact
     [Tags]                      regression    smoke
     Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_case
     Login To Salesforce         ${persona_username}
-    Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
+    #Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
+    Create a New Case Record    ${CaseTable.Subject}                 ${CaseTable.Description}             ${account}             ${contact}    ${CaseTable.Priority}    ${CaseTable.CaseOrigin}
     Validate the Case using the generated CaseNumber        ${sfbaseurl}                ${newcasenumber}
     Validate a Case Record Using SOQL Query                 ${newcasenumber}            description            caseorigin                       
+    
