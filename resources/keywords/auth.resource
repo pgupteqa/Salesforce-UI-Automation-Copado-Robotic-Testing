@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                   common.resource
+Library                    QForce
 
 *** Keywords ***
 Login To Salesforce
