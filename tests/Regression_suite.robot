@@ -23,7 +23,7 @@ Verify the User Can Create a New Account and Contact Record
 
 Verify a New Case Creation on a Contact
     [Documentation]             Agent user can create a new case with required Fields
-    [Tags]                      regression    smoke
+    [Tags]                      regression    smoke    ${crt_environment}_case_regression
     Import Variables            ../resources/variables/test_data1.py                    ${crt_environment}     create_case
     Login To Salesforce         ${persona_username}
     #Create a New Case Record    ${subject}                  ${description}              ${account}             ${contact}    ${priority}    ${caseorigin}
