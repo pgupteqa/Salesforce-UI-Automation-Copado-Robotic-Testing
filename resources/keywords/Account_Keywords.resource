@@ -1,6 +1,7 @@
 *** Settings ***
-Library                         ../page_locators/AccountPage_Locators.py
 Resource                        common.resource
+Resource                        ../page_locators/AccountPage_locator.resource
+
 
 *** Keywords ***
 Create a New Account using API
