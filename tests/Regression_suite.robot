@@ -1,6 +1,6 @@
 *** Settings ***
 Resource                        ../resources/keywords/common.resource
-Resource                        ../resources/variables/gettestdata.resource
+#Resource                        ../resources/variables/gettestdata.resource
 Resource                        ../resources/keywords/Account_Keywords.resource
 Resource                        ../resources/keywords/Contact_Keywords.resource
 Resource                        ../resources/keywords/Case_Keywords.resource
