@@ -32,3 +32,11 @@ Verify a New Case Creation on a Contact using Data Tables
     [Tags]                      ${crt_environment}_regression                           ${crt_environment}_smoke    ${crt_environment}_case_regression_datatable
     Create a New Case Record    ${CaseTable.Subject}        ${CaseTable.Description}    ${account}                  ${contact}    ${CaseTable.Priority}    ${CaseTable.CaseOrigin}
     Validate the Case using the generated CaseNumber        ${sfbaseurl}                ${newcasenumber}
+
+
+*** Keywords ***
+Get Test Data
+    [Documentation]           Add all test data file path into this variable
+    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_account
+    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_contact
+    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_case
