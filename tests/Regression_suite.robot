@@ -35,8 +35,8 @@ Verify a New Case Creation on a Contact using Data Tables
 
 
 *** Keywords ***
-Get Test Data
-    [Documentation]           Add all test data file path into this variable
-    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_account
-    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_contact
-    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_case
+#Get Test Data
+#    [Documentation]           Add all test data file path into this variable
+#    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_account
+#    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_contact
+#    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_case
