@@ -46,15 +46,15 @@ Get Random String with Numbers
     ${random_string}          Generate Random String      2                           [LOWER]
     ${random_string_num}      Set Variable                Ref-${random_string}-${random_string_no}
     Set Suite Variable        ${random_string_num}
-    RETURN                    ${random_string_num}                 
+    RETURN                    ${random_string_num}
 
 
 Login to Salesforce Org as AdminUser
-    [Documentation]    This keyword will login to the Sf org as admin user using the JwtAuthenticate
-    Login To Salesforce    ${persona_username}
+    [Documentation]           This keyword will login to the Sf org as admin user using the JwtAuthenticate
+    Login To Salesforce       ${persona_username}
 
 Get Test Data
-    [Documentation]     Add all test data file path into this variable
-    Import Variables    ${ROOTDIR}/data/testdata/stgenv_testdata.py            ${crt_environment}    create_account
-    Import Variables    ${ROOTDIR}/data/testdata/stgenv_testdata.py            ${crt_environment}    create_contact
-    Import Variables    ${ROOTDIR}/data/testdata/stgenv_testdata.py            ${crt_environment}    create_case
+    [Documentation]           Add all test data file path into this variable
+    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_account
+    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_contact
+    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_case
