@@ -51,4 +51,10 @@ Get Random String with Numbers
 
 Login to Salesforce Org as AdminUser
     [Documentation]    This keyword will login to the Sf org as admin user using the JwtAuthenticate
-    Login To Salesforce    ${persona_username}    
+    Login To Salesforce    ${persona_username}
+
+Get Test Data
+    [Documentation]     Add all test data file path into this variable
+    Import Variables    ${ROOTDIR}/data/testdata/stgenv_testdata.py            ${crt_environment}    create_account
+    Import Variables    ${ROOTDIR}/data/testdata/stgenv_testdata.py            ${crt_environment}    create_contact
+    Import Variables    ${ROOTDIR}/data/testdata/stgenv_testdata.py            ${crt_environment}    create_case
