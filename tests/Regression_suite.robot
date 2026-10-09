@@ -1,6 +1,6 @@
 *** Settings ***
 Resource                        ../resources/keywords/common.resource
-#Resource                        ../resources/variables/gettestdata.resource
+Resource                        ../resources/variables/gettestdata.resource
 Resource                        ../resources/keywords/Account_Keywords.resource
 Resource                        ../resources/keywords/Contact_Keywords.resource
 Resource                        ../resources/keywords/Case_Keywords.resource
@@ -12,7 +12,7 @@ Suite Teardown                  End Suite
 
 *** Test Cases ***
 Verify the User Can Create a New Account and Contact Record
-    [Documentation]             This keyword is used to Login to the salesforce Via JWT Login
+    [Documentation]             This keyword is used to create a new account and contact using the soql query and random test data
     [Tags]                      ${crt_environment}_regression                           ${crt_environment}_smoke
     Create a New Account using API                          ${accountname}              ${Industry}
     Verify Account Record       ${accountname}
@@ -32,11 +32,3 @@ Verify a New Case Creation on a Contact using Data Tables
     [Tags]                      ${crt_environment}_regression                           ${crt_environment}_smoke    ${crt_environment}_case_regression_datatable
     Create a New Case Record    ${CaseTable.Subject}        ${CaseTable.Description}    ${account}                  ${contact}    ${CaseTable.Priority}    ${CaseTable.CaseOrigin}
     Validate the Case using the generated CaseNumber        ${sfbaseurl}                ${newcasenumber}
-
-
-*** Keywords ***
-#Get Test Data
-#    [Documentation]           Add all test data file path into this variable
-#    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_account
-#    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_contact
-#    Import Variables          ../data/testdata/stgenv_testdata.py                     ${crt_environment}          create_case
