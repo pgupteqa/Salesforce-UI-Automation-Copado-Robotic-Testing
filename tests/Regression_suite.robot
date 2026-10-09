@@ -19,7 +19,7 @@ Verify the User Can Create a New Account and Contact Record
     #create a new contact record
     Create a New Contact Record                             ${lastname}
     Verify Contact Record       ${lastname}
-
+    Log To Console              ${CURDIR}
 Verify a New Case Creation on a Contact
     [Documentation]             Agent user can create a new case with required Fields
     [Tags]                      ${crt_environment}_regression                           ${crt_environment}_smoke    ${crt_environment}_case_regression
