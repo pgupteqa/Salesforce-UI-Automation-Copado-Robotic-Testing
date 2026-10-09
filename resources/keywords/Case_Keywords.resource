@@ -42,6 +42,7 @@ Validate a Case Record Using SOQL Query
         ${expected_value}=      Get Variable Value          ${variable_name}
         Should Not Be Equal     ${expected_value}           ${None}                     msg=Test data variable '${field}' was not found
         ${field_map}            Create Dictionary           subject=Subject             description=Description     priority=Priority    caseorigin=Origin
+        Log To Console          ${field_map}
         ${sf_field}             Get From Dictionary         ${field_map}                ${field}                    default=${field}
         ${actual_value}         Set Variable                ${case_record}[${sf_field}]
         Log To Console          ${field} | Expected: ${expected_value} | Actual: ${actual_value}
