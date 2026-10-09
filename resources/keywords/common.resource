@@ -17,7 +17,7 @@ Setup Browser
     ${is_live_testing}        Run Keyword And Return Status                           Directory Should Not Exist    path=${EXECDIR}/%{SCRIPTS}
     Log To Console            ${is_live_testing}
     IF                        ${is_live_testing}
-        Set Global Variable                               ${ROOTDIR}                  ${EXECDIR}/../..
+        Set Global Variable                               ${ROOTDIR}                  ${EXECDIR}
     ELSE
         Set Global Variable                               ${ROOTDIR}                  ${EXECDIR}/%{SCRIPTS}
     END
