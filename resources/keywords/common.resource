@@ -10,6 +10,7 @@ Resource                      auth.resource
 
 *** Variables ***
 ${BROWSER}                    ${browser}
+${EXECDIR}                    /home/services/suite
 
 *** Keywords ***
 Setup Browser
