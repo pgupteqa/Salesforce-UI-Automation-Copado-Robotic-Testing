@@ -12,7 +12,7 @@ def validate_case_fields_data(case_record, **expected):
 
     errors=[]
     for field, expected_value in expected.items():
-        sf_field = CASE_FIELD_MAP(field,field)
+        sf_field = CASE_FIELD_MAP.get(field,field)
         actual_value = case_record.get(sf_field)
         print(f"{field} | Expected: {expected_value} | Actual:{actual_value}")
         if str(actual_value) != str(expected_value):
