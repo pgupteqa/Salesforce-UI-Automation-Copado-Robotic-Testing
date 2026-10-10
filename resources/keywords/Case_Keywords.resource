@@ -15,7 +15,9 @@ Create a New Case Record
     PickList                    Priority                    ${priority}
     ScrollTo                    Additional Information
     ${random_num}               Get Random String with Numbers
-    TypeText                    ${CASE_SUBJECT}             ${subject}-Ref-${random_num}
+    ${fullsubject}              Set Variable                ${subject}-Ref-${random_num}
+    Set Suite Variable          ${fullsubject}                
+    TypeText                    ${CASE_SUBJECT}             ${fullsubject}             
     TypeText                    Description                 ${description}
     ClickElement                ${CASE_SAVE_BUTTON}
     #Get casenumber into a variable once it is created
