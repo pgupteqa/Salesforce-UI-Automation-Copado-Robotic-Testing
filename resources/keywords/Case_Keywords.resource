@@ -1,11 +1,12 @@
 *** Settings ***
 Resource                        common.resource
 Resource                        ../page_locators/CasePageLocators.resource
+Library                         ../../libraries/CaseFieldsValidations.py
 
 *** Keywords ***
 Create a New Case Record
     [Documentation]             This keyword will creates an new case record
-    [Arguments]                 ${subject}                  ${description}              ${account}                  ${contact}           ${priority}          ${caseorigin}
+    [Arguments]                 ${subject}                  ${description}              ${account}                  ${contact}              ${priority}          ${caseorigin}
     ClickText                   Case
     ClickElement                ${CASE_NEW_BUTTON}
     ComboBox                    Search Contacts...          ${contact}
@@ -41,7 +42,7 @@ Validate a Case Record Using SOQL Query
         ${variable_name}=       Set Variable                \${${field}}
         ${expected_value}=      Get Variable Value          ${variable_name}
         Should Not Be Equal     ${expected_value}           ${None}                     msg=Test data variable '${field}' was not found
-        ${field_map}            Create Dictionary           subject=Subject             description=Description     priority=Priority    caseorigin=Origin
+        ${field_map}            Create Dictionary           subject=Subject             description=Description     priority=Priority       caseorigin=Origin
         Log To Console          ${field_map}
         ${sf_field}             Get From Dictionary         ${field_map}                ${field}                    default=${field}
         ${actual_value}         Set Variable                ${case_record}[${sf_field}]
@@ -49,4 +50,11 @@ Validate a Case Record Using SOQL Query
         Should Be Equal As Strings                          ${actual_value}             ${expected_value}           msg=Validation failed for field '${field}'
     END
 
-
+Validate Case Fields Record using SOQL
+    [Documentation]             This keyword will get the Case record with all fields
+    [Arguments]                 ${casenumber}
+    ${query}                    Set Variable                Select Fields(ALL), Account.Name, Contact.Name from Case Where CaseNumber = '${casenumber}' Limit 1
+    ${records}                  QueryRecords                ${query}
+    Should Not Be Empty         ${records}[records]         msg=Case '${newcasenumber}' was not found
+    ${case_record}              Set Variable                ${records}[records][0]
+    Validate Case Fields Data                               ${case_record}              subject=${subject}          description=${description}                   priority=${priority}
