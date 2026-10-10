@@ -16,8 +16,8 @@ Create a New Case Record
     ScrollTo                    Additional Information
     ${random_num}               Get Random String with Numbers
     ${fullsubject}              Set Variable                ${subject}-Ref-${random_num}
-    Set Suite Variable          ${fullsubject}                
-    TypeText                    ${CASE_SUBJECT}             ${fullsubject}             
+    Set Suite Variable          ${fullsubject}
+    TypeText                    ${CASE_SUBJECT}             ${fullsubject}
     TypeText                    Description                 ${description}
     ClickElement                ${CASE_SAVE_BUTTON}
     #Get casenumber into a variable once it is created
@@ -29,7 +29,11 @@ Validate the Case using the generated CaseNumber
     [Arguments]                 ${sforgurl}                 ${casenumber}
     GlobalSearch                ${sforgurl}                 ${casenumber}               Case
     ${casenumberval}            Replace String              ${CASESEARCH_RESULT}        dynamic_value               ${casenumber}
-    VerifyElement               ${casenumberval}
+    ${globalsearchstatus}       Run Keyword and Return Status                           VerifyElement               ${casenumberval}
+    IF                          ${globalsearchstatus} == false
+        RefreshPage
+        VerifyElement           ${casenumberval}
+    END
     ClickElement                ${casenumberval}
     VerifyText                  ${casenumber}
 
@@ -59,4 +63,4 @@ Validate Case Fields Record using SOQL
     ${records}                  QueryRecords                ${query}
     Should Not Be Empty         ${records}[records]         msg=Case '${newcasenumber}' was not found
     ${case_record}              Set Variable                ${records}[records][0]
-    Validate Case Fields Data                               ${case_record}              subject=${fullsubject}          description=${description}                   priority=${priority}
+    Validate Case Fields Data                               ${case_record}              subject=${fullsubject}      description=${description}                   priority=${priority}
