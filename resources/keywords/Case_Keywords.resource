@@ -59,4 +59,4 @@ Validate Case Fields Record using SOQL
     ${records}                  QueryRecords                ${query}
     Should Not Be Empty         ${records}[records]         msg=Case '${newcasenumber}' was not found
     ${case_record}              Set Variable                ${records}[records][0]
-    Validate Case Fields Data                               ${case_record}              subject=${subject}          description=${description}                   priority=${priority}
+    Validate Case Fields Data                               ${case_record}              subject=${fullsubject}          description=${description}                   priority=${priority}
