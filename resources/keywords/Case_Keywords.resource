@@ -30,7 +30,7 @@ Validate the Case using the generated CaseNumber
     GlobalSearch                ${sforgurl}                 ${casenumber}               Case
     ${casenumberval}            Replace String              ${CASESEARCH_RESULT}        dynamic_value               ${casenumber}
     ${globalsearchstatus}       Run Keyword and Return Status                           VerifyElement               ${casenumberval}
-    IF                          ${globalsearchstatus} == false
+    IF                          ${globalsearchstatus} == 'False'
         RefreshPage
         VerifyElement           ${casenumberval}
     END
